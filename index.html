@@ -1,16 +1,251 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>LiveLab 4 Demo</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nomadiq Travel Destinations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --misty-blue: #c7e6e1;
+      --coastal-teal: #6fb3b8;
+      --off-white: #fdfdfd;
+      --hero-bg: #e9f5f3;
+      --link-color: #003e3e;
+      --link-hover: #002222;
+      --about-heading: #006755;
+      --about-text: #333;
+      --about-color: #2c5f5d;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--off-white);
+      line-height: 1.6;
+      font-size: 16px;
+      color: #333;
+    }
+
+    header {
+      background-color: var(--misty-blue);
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      color: var(--coastal-teal);
+    }
+
+    .logo::before {
+      content: "🌍 ";
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: var(--link-color);
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      background-color: var(--hero-bg);
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--link-hover);
+      transition: color 0.4s ease, letter-spacing 0.4s ease;
+      cursor: default;
+    }
+
+    .hero h1:hover,
+    .hero h1:focus {
+      color: #004d4d;
+      letter-spacing: 1.5px;
+    }
+
+    .hero p {
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--about-text);
+    }
+
+    .about {
+      padding: 2.5rem 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--about-color);
+    }
+
+    .about h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--about-heading);
+    }
+
+    .about p {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--about-text);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background-color: var(--misty-blue);
+      color: var(--coastal-teal);
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cta button {
+      background-color: var(--coastal-teal);
+      color: var(--off-white);
+      border: none;
+      padding: 0.65rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta button:hover {
+      background-color: #548c82;
+    }
+
+    /* Responsive Images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Media Queries for 600px and wider */
+    @media (min-width: 600px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 3rem;
+        text-align: left;
+      }
+
+      .logo {
+        font-size: 2rem;
+      }
+
+      nav {
+        margin-top: 0;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+        margin: 0 1rem;
+      }
+
+      .hero {
+        padding: 5rem 3rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+      }
+
+      .about {
+        padding: 4rem 3rem;
+        text-align: left;
+      }
+
+      .about h2 {
+        font-size: 2.25rem;
+      }
+
+      .about p {
+        font-size: 1.15rem;
+      }
+
+      .cta {
+        padding: 4rem 3rem;
+      }
+
+      .cta p {
+        font-size: 1.5rem;
+      }
+
+      .cta button {
+        font-size: 1.15rem;
+        padding: 0.85rem 2.5rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <header>
+    <div class="logo">Nomadiq Travel Destinations</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h1>Explore Sustainable Travel</h1>
+    <p>Discover the world while preserving it. At Nomadiq, we promote journeys that are kind to the planet—supporting local cultures, reducing environmental impact, and embracing nature's rhythm.</p>
+  </section>
+
+  <section class="about">
+    <h2>About Nomadiq Travel Destinations</h2>
+    <p>
+      At Nomadiq, we are passionate about connecting travelers with sustainable and eco-friendly travel experiences. Our mission is to promote responsible tourism that respects the environment, supports local communities, and preserves natural beauty for future generations.
+    </p>
+  </section>
+
+  <section class="cta">
+    <p>Ready to embark on your sustainable journey?</p>
+    <button onclick="alert('Thank you for your interest!')">Plan Your Trip</button>
+  </section>
+</body>
 </html>
